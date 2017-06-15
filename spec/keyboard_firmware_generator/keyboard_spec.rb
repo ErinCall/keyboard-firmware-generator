@@ -21,7 +21,7 @@ describe KeyboardFirmwareGenerator::Keyboard do
         end
       end
 
-      expect(keyboard.hands.first).not_to be_nil
+      expect(keyboard.hands.first).to be_a(KeyboardFirmwareGenerator::Hand)
       expect(keyboard.hands.first).to be(hand)
       expect(keyboard.hands.first.name).to eq('left')
     end

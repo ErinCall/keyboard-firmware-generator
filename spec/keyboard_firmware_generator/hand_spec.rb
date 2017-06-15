@@ -11,7 +11,7 @@ describe KeyboardFirmwareGenerator::Hand do
         end
       end
 
-      expect(hand.columns.first).not_to be_nil
+      expect(hand.columns.first).to be_a(KeyboardFirmwareGenerator::Column)
       expect(hand.columns.first).to be(column)
       expect(hand.columns.first.index).to eq(4)
     end
