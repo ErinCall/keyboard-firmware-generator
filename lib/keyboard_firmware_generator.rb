@@ -1,5 +1,7 @@
 require "keyboard_firmware_generator/version"
-require "keyboard_firmware_generator/generator"
+require "keyboard_firmware_generator/keyboard"
+require "keyboard_firmware_generator/hand"
+require "keyboard_firmware_generator/column"
 
 module KeyboardFirmwareGenerator
   # Your code goes here...
