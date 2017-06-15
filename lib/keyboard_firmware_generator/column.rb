@@ -1,16 +1,16 @@
 module KeyboardFirmwareGenerator
   class Column
     attr_reader :index
-    attr_reader :keys
+    attr_reader :characters
 
     def initialize(index, &block)
       @index = index
-      @keys = []
+      @characters = []
       instance_eval &block
     end
 
-    def key(value)
-      keys << Key.new(value)
+    def character(value)
+      characters << Character.new(value)
     end
   end
 end

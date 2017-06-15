@@ -1,5 +1,5 @@
 module KeyboardFirmwareGenerator
-  class Key
+  class Character
     attr_reader :value
 
     def initialize(value)

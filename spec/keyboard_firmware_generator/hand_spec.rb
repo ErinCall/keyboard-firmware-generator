@@ -19,16 +19,16 @@ describe KeyboardFirmwareGenerator::Hand do
     it 'reopens the given column' do
       hand = KeyboardFirmwareGenerator::Hand.new(:left) do
         column 4 do
-          key 'a'
+          character 'a'
         end
 
         column 4 do
-          key 'b'
+          character 'b'
         end
       end
 
       expect(hand.columns.length).to eq(1)
-      expect(hand.columns.first.keys.length).to eq(2)
+      expect(hand.columns.first.characters.length).to eq(2)
     end
   end
 end
