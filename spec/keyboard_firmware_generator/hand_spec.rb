@@ -1,19 +1,19 @@
 require "spec_helper"
 
 describe KeyboardFirmwareGenerator::Hand do
-  describe '#column' do
+  describe '#layer' do
     it 'initializes the given column' do
-      column = nil
+      layer = nil
 
       hand = KeyboardFirmwareGenerator::Hand.new(:left) do
-        column 4 do
-          column = self
+        layer 4 do
+          layer = self
         end
       end
 
-      expect(hand.columns.first).to be_a(KeyboardFirmwareGenerator::Column)
-      expect(hand.columns.first).to be(column)
-      expect(hand.columns.first.index).to eq(4)
+      expect(hand.layers.first).to be_a(KeyboardFirmwareGenerator::Layer)
+      expect(hand.layers.first).to be(layer)
+      expect(hand.layers.first.index).to eq(4)
     end
   end
 end
