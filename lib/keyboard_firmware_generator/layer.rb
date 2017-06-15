@@ -10,7 +10,11 @@ module KeyboardFirmwareGenerator
     end
 
     def hand(name, &block)
-      hands << Hand.new(name, &block)
+      if hands.map(&:name).include? name
+        hands.find {|hand| hand.name == name}.instance_eval(&block)
+      else
+        hands << Hand.new(name, &block)
+      end
     end
   end
 end

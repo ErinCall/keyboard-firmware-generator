@@ -15,5 +15,20 @@ describe KeyboardFirmwareGenerator::Layer do
       expect(layer.hands.first).to be(hand)
       expect(layer.hands.first.name).to eq('left')
     end
+
+    it 'reopens the given hand' do
+      layer = KeyboardFirmwareGenerator::Layer.new(4) do
+        hand 'left' do
+          column(1) {}
+        end
+
+        hand 'left' do
+          column(2) {}
+        end
+      end
+
+      expect(layer.hands.length).to eq(1)
+      expect(layer.hands.first.columns.length).to eq(2)
+    end
   end
 end

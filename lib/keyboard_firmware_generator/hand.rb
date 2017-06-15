@@ -10,7 +10,11 @@ module KeyboardFirmwareGenerator
     end
 
     def column(index, &block)
-      columns << Column.new(index, &block)
+      if columns.map(&:index).include? index
+        columns.find { |column| column.index == index }.instance_eval &block
+      else
+        columns << Column.new(index, &block)
+      end
     end
   end
 end
