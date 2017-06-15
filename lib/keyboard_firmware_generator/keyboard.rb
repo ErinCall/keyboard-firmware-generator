@@ -8,7 +8,13 @@ module KeyboardFirmwareGenerator
     end
 
     def layer(index, &block)
-      layers << Layer.new(index, &block)
+      if layers.map(&:index).include? index
+        layers.find do |layer|
+          layer.index == index
+        end.instance_eval &block
+      else
+        layers << Layer.new(index, &block)
+      end
     end
   end
 end

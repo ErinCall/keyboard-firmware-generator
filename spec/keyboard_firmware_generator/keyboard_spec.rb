@@ -25,5 +25,20 @@ describe KeyboardFirmwareGenerator::Keyboard do
       expect(keyboard.layers.first).to be(layer)
       expect(keyboard.layers.first.index).to eq(4)
     end
+
+    it 'reopens the given layer' do
+      keyboard = KeyboardFirmwareGenerator::Keyboard.new do
+        layer 4 do
+          hand('left') {}
+        end
+
+        layer 4 do
+          hand('right') {}
+        end
+      end
+
+      expect(keyboard.layers.length).to eq(1)
+      expect(keyboard.layers.first.hands.length).to eq(2)
+    end
   end
 end
