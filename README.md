@@ -1,8 +1,6 @@
 # KeyboardFirmwareGenerator
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/keyboard_firmware_generator`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem allows describing keyboard firmwares in Ruby. Note that the firmware itself doesn't run in Ruby; the Ruby generates C code for compilation.
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+TODO: Make gem usable
 
 ## Development
 

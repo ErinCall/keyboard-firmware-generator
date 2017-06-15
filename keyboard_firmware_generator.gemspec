@@ -6,18 +6,18 @@ require 'keyboard_firmware_generator/version'
 Gem::Specification.new do |spec|
   spec.name          = "keyboard_firmware_generator"
   spec.version       = KeyboardFirmwareGenerator::VERSION
-  spec.authors       = ["TODO: Write your name"]
-  spec.email         = ["TODO: Write your email address"]
+  spec.authors       = ["Erin Call"]
+  spec.email         = ["hello@erincall.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Generate keyboard firmwares from Ruby}
+  spec.description   = %q{Note that the firmware itself doesn't run in Ruby; the Ruby generates C code for compilation}
+  spec.homepage      = "https://github.com/erincall/keyboard_firmware_generator"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
+    spec.metadata['allowed_push_host'] = "http://no.pushing.allowed"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."
