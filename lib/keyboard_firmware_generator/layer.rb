@@ -1,16 +1,16 @@
 module KeyboardFirmwareGenerator
   class Layer
     attr_reader :index
-    attr_reader :columns
+    attr_reader :hands
 
     def initialize(index, &block)
       @index = index
-      @columns = []
+      @hands = []
       instance_eval &block
     end
 
-    def column(index, &block)
-      columns << Column.new(index, &block)
+    def hand(name, &block)
+      hands << Hand.new(name, &block)
     end
   end
 end

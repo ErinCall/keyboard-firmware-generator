@@ -11,19 +11,19 @@ describe KeyboardFirmwareGenerator::Keyboard do
     end
   end
 
-  describe '#hand' do
-    it 'initializes the given hand' do
-      hand = nil
+  describe '#layer' do
+    it 'initializes the given layer' do
+      layer = nil
 
       keyboard = KeyboardFirmwareGenerator::Keyboard.new do
-        hand(:left) do
-          hand = self
+        layer(4) do
+          layer = self
         end
       end
 
-      expect(keyboard.hands.first).to be_a(KeyboardFirmwareGenerator::Hand)
-      expect(keyboard.hands.first).to be(hand)
-      expect(keyboard.hands.first.name).to eq('left')
+      expect(keyboard.layers.first).to be_a(KeyboardFirmwareGenerator::Layer)
+      expect(keyboard.layers.first).to be(layer)
+      expect(keyboard.layers.first.index).to eq(4)
     end
   end
 end

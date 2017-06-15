@@ -1,14 +1,14 @@
 module KeyboardFirmwareGenerator
   class Keyboard
-    attr_reader :hands
+    attr_reader :layers
 
     def initialize(&block)
-      @hands = []
+      @layers = []
       instance_eval &block
     end
 
-    def hand(name, &block)
-      hands << Hand.new(name, &block)
+    def layer(index, &block)
+      layers << Layer.new(index, &block)
     end
   end
 end
